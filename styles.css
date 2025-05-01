@@ -1,0 +1,523 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body, html {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f1f7ff;;
+    color: #f0f4f8;
+  }
+  
+  
+.hero {
+    position: relative;
+    height: 90vh;
+    background: url('car-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 50px;
+    filter: brightness(70%);
+    transition: all 0.5s ease;
+    background-attachment: fixed; 
+    transform: scale(1);
+    background-color: #f1f7ff;
+  }
+  
+  
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to bottom rgb(255, 255, 255)); 
+    /* background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0)); */
+
+   
+    z-index: 1;
+  }
+  
+  /* Hero Text Fade-In Animation */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+    animation: fadeIn 1.5s ease-out;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #003cff; 
+    opacity: 1;
+    animation: fadeIn 2s forwards;
+  }
+  
+  .hero p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    color: #1e1e1e; 
+    opacity: 1;
+    animation: fadeIn 2s forwards 0.5s;
+  }
+  
+  /* Buttons */
+  .buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .btn {
+    padding: 12px 24px;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s ease-in-out;
+  }
+  
+  .btn.green {
+    background-color: #d3e7ff; 
+    color: #003cff;
+    border: 2px solid #d3e7ff;
+  }
+  
+  .btn.green:hover {
+    background-color: #b8d8f7; 
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  
+  .btn.transparent {
+    background-color: rgba(255, 255, 255, 0.3); 
+    border: 2px solid #ffffff;
+    color: #ffffff;
+  }
+  
+  .btn.transparent:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+  }
+  
+  /* Hover Effect on Hero Section */
+  .hero:hover {
+    filter: brightness(100%); 
+    transform: scale(1.05); 
+    background-color: #d3e7ff; 
+    transition: transform 0.5s ease, filter 0.5s ease, background-color 0.5s ease; 
+  }
+  
+  .hero:hover .hero-content h1 {
+    color: #5dbfbc;
+    transition: color 0.3s ease; 
+  }
+  
+  .hero:hover .hero-content p {
+    color: hsl(297, 58%, 70%); 
+    transition: color 0.3s ease; 
+  }
+  
+  /* Wave Animation */
+  .wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: url('wave.svg') repeat-x;
+    background-size: cover;
+    z-index: 2;
+    animation: waveAnimation 4s linear infinite;
+  }
+  
+  @keyframes waveAnimation {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  
+  
+  
+  
+  
+  /* About Section */
+.about {
+    padding: 80px 20px;
+    background-color: #f1f7ff; /* Light blue color */
+    text-align: center;
+    margin-top: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .about .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+ 
+  .about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #003cff; 
+    transition: color 0.3s ease;
+  }
+  
+ 
+  .about p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+  }
+  
+
+  .about:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); 
+    background-color: #d3e7ff; 
+  }
+  
+  
+  .about:hover h2 {
+    color: #003cff; 
+    transform: scale(1.05); 
+  }
+  
+  
+  .about:hover p {
+    color: #1e1e1e; 
+    transform: scale(1.02); 
+  }
+  
+ 
+  .about .container {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+ 
+.features {
+    background-color: #f1f7ff;
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    border-top: 2px solid #d3e7ff;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+  }
+  
+  
+  .features::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(211, 231, 255, 0.7), rgba(241, 247, 255, 0.5)); /* Lighter gradient */
+    z-index: -1; 
+  }
+  
+  
+  .features h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #003cff; 
+    font-weight: bold;
+  }
+  
+  
+  .features-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+  }
+  
+  
+  .features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  
+  .feature-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+    max-width: 300px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  
+  .feature-card:hover {
+    transform: translateY(-10px); 
+    background-color: #f1f7ff; 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .feature-card h3 {
+    font-size: 1.3rem;
+    color: #003cff; 
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+  }
+  
+  .feature-card p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+  }
+  
+  
+  .feature-card:hover h3 {
+    color: #218838; 
+  }
+  
+  
+  .feature-card:hover p {
+    color: #555; 
+  }
+  
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
+  .feature-card:nth-child(odd) {
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  .feature-card:nth-child(even) {
+    animation: fadeInUp 1s ease-out 0.5s;
+  }
+  
+  
+  .features:hover {
+    background-color: #d3e7ff; 
+    transform: translateY(-5px); 
+  }
+  
+ 
+  .features:hover h2 {
+    color: #1a73e8; 
+  }
+  
+  
+  .features:hover .features-subtitle {
+    color: #333; 
+  }
+  
+  
+.team {
+    background-color: #f1f7ff; 
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+  }
+  
+ 
+  .team::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(211, 231, 255, 0.7), rgba(241, 247, 255, 0.5)); 
+    z-index: -1; 
+  }
+  
+  
+  .team h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #003cff; 
+    font-weight: bold;
+  }
+  
+  
+  .team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  
+  .team-member {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+    max-width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+  
+ 
+  .team-member:hover {
+    transform: translateY(-10px); 
+    background-color: #f1f7ff; 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  
+  .team-member h3 {
+    font-size: 1.3rem;
+    color: #003cff; 
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+  }
+  
+  
+  .team-member p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+  }
+  
+  
+  .team-member:hover h3 {
+    color: #218838; 
+  }
+  
+ 
+  .team-member:hover p {
+    color: #555; 
+  }
+  
+
+  .team:hover {
+    background-color: #d3e7ff; 
+    transform: translateY(-5px); 
+  }
+  
+  
+  .team:hover h2 {
+    color: #1a73e8; 
+  }
+  
+  
+  .team:hover .team-subtitle {
+    color: #333; 
+  }
+  
+  
+  
+  .footer {
+    background: linear-gradient(to right, #d3e7ff, #f1f7ff);
+    color: #333;
+    padding: 60px 20px 20px;
+    font-size: 0.95rem;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #c8daef;
+  }
+  
+  .footer-brand h3 {
+    font-size: 1.6rem;
+    color: #003cff;
+    margin-bottom: 10px;
+  }
+  
+  .footer-brand p {
+    max-width: 300px;
+    color: #555;
+  }
+  
+  .footer-links h4,
+  .footer-contact h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #003cff;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin: 6px 0;
+  }
+  
+  .footer-links a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #0077ff;
+  }
+  
+  .footer-contact p {
+    margin: 6px 0;
+    color: #444;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  .footer-bottom p {
+    margin: 6px 0;
+  }
+  
